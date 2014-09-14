@@ -12,6 +12,12 @@ Install this addon via npm:
 npm install --save-dev ember-sanitize
 ```
 
+Then run the generator to install `sanitize.js`:
+
+```
+ember generate ember-sanitize
+```
+
 ### Usage
 
 Simply use the `sanitize-html` helper in your template:
