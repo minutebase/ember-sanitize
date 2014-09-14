@@ -1,7 +1,7 @@
 {
   "name": "ember-sanitize",
   "description": "Sanitize user provided HTML in your Ember CLI app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "directories": {
     "doc": "doc",
     "test": "test"
@@ -11,7 +11,7 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "https://github.com/stefanpenner/ember-cli",
+  "repository": "https://github.com/minutebase/ember-sanitize",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -23,7 +23,10 @@
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
-  "author": "",
+  "author": {
+    "name": "Richard Livsey",
+    "email": "richard@minutebase.com"
+  },
   "license": "MIT",
   "devDependencies": {
     "body-parser": "^1.2.0",
