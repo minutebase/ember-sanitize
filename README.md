@@ -1,25 +1,59 @@
-# Ember-sanitize
+# ember-sanitize
 
-This README outlines the details of collaborating on this Ember addon.
+An Ember CLI addon to sanitize user provided content using [sanitize.js](https://github.com/gbirke/Sanitize.js).
 
-## Installation
+## Using
+
+### Installation
+
+Install this addon via npm:
+
+```
+npm --save-dev ember-sanitize
+```
+
+### Usage
+
+Simply use the `sanitize-html` helper in your template:
+
+```handlebars
+{{sanitize-html someValue}}
+```
+
+This will use the most restrictive sanititizer config by default, which will strip all HTML.
+
+To use your own sanitizer configuration, add a file to `/app/sanitizers/` which exports an object
+conforming to [sanitizer's configuration options](https://github.com/gbirke/Sanitize.js#configuration).
+
+For example:
+
+```js
+// /app/sanitizers/strict.js
+export default {
+  elements: ['b', 'em', 'i', 'strong', 'u']
+};
+```
+
+You can then use this configuration by passing it in as the second argument to the helper:
+
+```handlebars
+{{sanitize-html someValue "strict"}}
+```
+
+## Developing
+
+### Installation
 
 * `git clone` this repository
 * `npm install`
 * `bower install`
 
-## Running
+### Running
 
 * `ember server`
 * Visit your app at http://localhost:4200.
 
-## Running Tests
+### Running Tests
 
 * `ember test`
 * `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).

@@ -1,3 +1,11 @@
 <h2 id='title'>Welcome to Ember.js</h2>
 
 {{outlet}}
+
+<div id="sanitized-default">
+  {{sanitize-html html}}
+</div>
+
+<div id="sanitized-with-config">
+  {{sanitize-html html "strict"}}
+</div>
