@@ -1,7 +1,7 @@
 {
   "name": "ember-sanitize",
   "description": "Sanitize user provided HTML in your Ember CLI app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "directories": {
     "doc": "doc",
     "test": "tests"
