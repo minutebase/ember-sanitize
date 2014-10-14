@@ -9,10 +9,10 @@ function loadConfig(container, name) {
 export default Ember.Mixin.create({
   sanitizeElement: function(selector, configName) {
     var element = this.$(selector)[0];
-    return sanitizeElement(element, loadConfig(configName));
+    return sanitizeElement(element, loadConfig(this.container, configName));
   },
 
   sanitizeHTML: function(html, configName) {
-    return sanitize(html, loadConfig(configName));
+    return sanitize(html, loadConfig(this.container, configName));
   }
 });
