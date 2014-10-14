@@ -15,5 +15,6 @@ function sanitize(html, config) {
 }
 
 export {
-  sanitize
+  sanitize,
+  sanitizeElement
 };
