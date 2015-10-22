@@ -34,7 +34,6 @@ test("looks up config on the container", function() {
   visit("/");
   andThen(function() {
     var html = find("#sanitized-with-config").html();
-    //ok(html.indexOf("some html <i>here</i>") !== -1, "contains sanitized HTML ("+html+")");
-    equal(html, '');
+    ok(html.indexOf("some html <i>here</i>") !== -1, "contains sanitized HTML ("+html+")");
   });
 });
