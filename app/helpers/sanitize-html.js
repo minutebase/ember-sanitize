@@ -1,19 +1,15 @@
 import { sanitize } from 'ember-sanitize/utils/sanitize';
 import Ember from 'ember';
 
-export default Ember.Handlebars.makeBoundHelper(function(html, configName, options) {
-  if (arguments.length === 2) {
-    options    = configName;
-    configName = null;
-  }
+export default Ember.Helper.extend({
+  compute(params) {
+    let config, configName = params[1];
+    if (configName) {
+      //lookup the config
+      config = this.container.lookup('sanitizer:' + configName);
+    }
 
-  var config;
-  if (configName) {
-    var data      = options.data;
-    var container = this.container || (data && data.view && data.view.container);
-    var config    = container.lookup("sanitizer:"+configName);
+    let sanitized = sanitize(params[0], config);
+    return new Ember.String.htmlSafe(sanitized);
   }
-
-  var sanitized = sanitize(html, config);
-  return new Ember.Handlebars.SafeString(sanitized);
 });
