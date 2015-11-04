@@ -9,7 +9,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember try:testall"
   },
   "repository": "https://github.com/minutebase/ember-sanitize",
   "engines": {
