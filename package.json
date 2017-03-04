@@ -1,6 +1,6 @@
 {
   "name": "ember-sanitize",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Sanitize user provided HTML in your Ember CLI app",
   "directories": {
     "doc": "doc",
@@ -49,7 +49,7 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
-    "ember-getowner-polyfill": "~1.0.0"
+    "ember-getowner-polyfill": "^1.1.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
