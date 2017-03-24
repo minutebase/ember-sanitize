@@ -46,6 +46,28 @@ You can then use this configuration by passing it in as the second argument to t
 {{sanitize-html someValue "strict"}}
 ```
 
+### Testing a component that uses the helper with a custom config
+
+In order for the helper to load your config, the AddOn's initializer must be invoked. You will need to:
+
+```
+import initializer from 'opendata-ui/initializers/ember-sanitize';
+```
+
+and then:
+
+```
+moduleForComponent('my-component', 'Integration | Component | my component', {
+  integration: true,
+
+  setup() {
+    // manually invoke the ember-sanitize initializer
+    initializer.initialize(this.container);
+  }
+});
+```
+
+
 ## Developing
 
 ### Installation
