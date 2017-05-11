@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import { sanitize, sanitizeElement } from '../utils/sanitize';
-import getOwner from 'ember-getowner-polyfill';
+
+const {getOwner} = Ember;
 
 function loadConfig(container, name) {
   if (!name) { return; }
