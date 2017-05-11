@@ -1,6 +1,7 @@
 import { sanitize } from 'ember-sanitize/utils/sanitize';
-import getOwner from 'ember-getowner-polyfill';
 import Ember from 'ember';
+
+const {getOwner} = Ember;
 
 export default Ember.Helper.extend({
   compute(params) {
