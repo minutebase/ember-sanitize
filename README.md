@@ -9,13 +9,7 @@ An Ember CLI addon to sanitize user provided content using [sanitize.js](https:/
 Install this addon via npm:
 
 ```
-npm install --save-dev ember-sanitize
-```
-
-Then run the generator to install `sanitize.js`:
-
-```
-ember generate ember-sanitize
+ember install ember-sanitize
 ```
 
 ### Usage
@@ -46,13 +40,29 @@ You can then use this configuration by passing it in as the second argument to t
 {{sanitize-html someValue "strict"}}
 ```
 
+If you want to include one of the [configurations that ship with `Sanitize.js`](https://github.com/gbirke/Sanitize.js/tree/master/lib/sanitize/config), you can configure the addon to import them:
+
+```javascript
+// ember-cli-build.js
+...
+let app = new EmberApp(defaults, {
+  ...
+  'ember-sanitize': {
+    importConfig: [
+      'relaxed'
+    ]
+  }
+  ...
+});
+...
+```
+
 ## Developing
 
 ### Installation
 
 * `git clone` this repository
-* `npm install`
-* `bower install`
+* `yarn install`
 
 ### Running
 

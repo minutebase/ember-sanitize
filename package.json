@@ -24,7 +24,9 @@
   },
   "dependencies": {
     "ember-cli-babel": "^6.6.0",
-    "ember-getowner-polyfill": "^1.1.0"
+    "ember-cli-node-assets": "^0.2.2",
+    "ember-getowner-polyfill": "^1.1.0",
+    "sanitize": "alexlafroscia/Sanitize.js#abc5fc9f8f9c8de9f362b9b0fcf19a6ec6e52dc4"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",

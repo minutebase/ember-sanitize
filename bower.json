@@ -1,6 +1,0 @@
-{
-  "name": "ember-sanitize",
-  "dependencies": {
-    "sanitize.js": "^1.0.0"
-  }
-}
