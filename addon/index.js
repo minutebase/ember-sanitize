@@ -1,12 +1,2 @@
-import {
-  sanitize,
-  sanitizeElement
-} from './utils/sanitize';
-
-import SanitizeMixin from './mixins/sanitize';
-
-export {
-  sanitize,
-  sanitizeElement,
-  SanitizeMixin
-};
+export { sanitize, sanitizeElement } from './utils/sanitize';
+export { default as SanitizeMixin } from './mixins/sanitize';
