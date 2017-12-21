@@ -1,16 +1,16 @@
-import { sanitize } from 'ember-sanitize/utils/sanitize';
-import getOwner from 'ember-getowner-polyfill';
 import Ember from 'ember';
+import { sanitize } from 'ember-sanitize/utils/sanitize';
+
+const { getOwner } = Ember;
 
 export default Ember.Helper.extend({
-  compute(params) {
-    let config, configName = params[1];
+  compute([input, configName]) {
+    let config;
     if (configName) {
-      //lookup the config
       config = getOwner(this).lookup('sanitizer:' + configName);
     }
 
-    let sanitized = sanitize(params[0], config);
+    let sanitized = sanitize(input, config);
     return new Ember.String.htmlSafe(sanitized);
   }
 });
