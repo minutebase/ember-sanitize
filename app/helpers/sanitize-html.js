@@ -1,8 +1,9 @@
+import { htmlSafe } from '@ember/template';
+import Helper from '@ember/component/helper';
 import { sanitize } from 'ember-sanitize/utils/sanitize';
-import getOwner from 'ember-getowner-polyfill';
-import Ember from 'ember';
+import { getOwner } from '@ember/application';
 
-export default Ember.Helper.extend({
+export default Helper.extend({
   compute(params) {
     let config, configName = params[1];
     if (configName) {
@@ -11,6 +12,6 @@ export default Ember.Helper.extend({
     }
 
     let sanitized = sanitize(params[0], config);
-    return new Ember.String.htmlSafe(sanitized);
+    return new htmlSafe(sanitized);
   }
 });
