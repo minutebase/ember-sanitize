@@ -1,13 +1,14 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 import { sanitize, sanitizeElement } from '../utils/sanitize';
-import getOwner from 'ember-getowner-polyfill';
+import { getOwner } from '@ember/application';
 
 function loadConfig(container, name) {
-  if (!name) { return; }
-  return container.lookup("sanitizer:"+name);
+  if (name) {
+    return container.lookup(`sanitizer:${name}`);
+  }
 }
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   sanitizeElement: function(selector, configName) {
     var element = this.$(selector)[0];
     return sanitizeElement(element, loadConfig(this.container, configName));
